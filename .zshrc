@@ -25,6 +25,7 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
+
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -36,3 +37,8 @@ man() {
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
         man "$@"
     }
+
+source  ~/powerlevel9k/powerlevel9k.zsh-theme
+DEFAULT_USER=dkuykendall
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
